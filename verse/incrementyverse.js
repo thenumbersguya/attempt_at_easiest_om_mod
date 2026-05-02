@@ -1,7 +1,7 @@
 "use strict";
 let incrementyUpgradeLoop = [EN(0),EN(0),EN(0)]
 let inEnterIncrementyverseAnimation = 0
-const incrementyverseUpgradeCosts = [EN("1e1136"),EN("1e23500"),EN("e5e7"),EN("eee10"),EN("10^^10000"),EN("10^^^1000"),EN("10^^^^^100"),EN("10^^^^^^^^^^10"),EN("NaN"),EN("NaN"),EN("NaN"),EN("NaN")]
+const incrementyverseUpgradeCosts = [EN("0"),EN("0"),EN("0"),EN("0"),EN("0"),EN("0"),EN("0"),EN("0"),EN("NaN"),EN("NaN"),EN("NaN"),EN("NaN")]
 const ordThreshData = {
   "buchholz e(W2+1)": EN(3).pow(EN(3).pow(3**26+10/3).add(27)),
   "madore e(W2+1)": EN(3).pow(EN(3).pow(EN(3).pow(30).add(3))),
@@ -310,9 +310,9 @@ function buyIupsWithAuto(ms) {
 
 function die() {
   if (inEnterIncrementyverseAnimation == 1) return
-  if (!game.bestIncrementy.gte("1e540")) return
-  if (game.achievement.length <= 89.5) return
-  if (!confirm("Are you sure you want to enter the Incrementyverse? You'll lose all of your factors, boosters, cardinals, challenges, omega challenges, and so on.")) return
+  if (!game.bestIncrementy.gte("0")) return
+  if (game.achievement.length <= 0) return
+  if (!confirm("Are you sure you want to enter the Incrementyverse? You'll lose (a lot of stuff.)")) return
   if (!confirm("You also die by entering the Incrementyverse, and your soul will pass through. Are you still sure you want to enter?")) return
   if (!confirm("But you lose everything. You have to be damn sure you want to enter.")) return
   if (!confirm("BUT WAIT, IF YOU DIE IN ORDINAL MARKUP YOU DIE IN MEMES")) return
@@ -418,11 +418,11 @@ function realDisplayHugeOrd(x,layer=0) {
     let k=x.clone()
     if (k.layer == 0) {
       //return `φ<sub>${k.array.length}</sub> (Ω+1)`
-      return `way too large`
+      return `hey bro this is really huge`
     } else {
       k.layer--
       //return `φ<sub>${realDisplayHugeOrd(k,nly)}</sub> (Ω+1)`
-      return `way too large`
+      return `hey bro this is really huge`
     }
   }
   if (x.gte(ordThreshData["buchholz e(W2+1)"])&&game.buchholz != 0) {
@@ -616,7 +616,7 @@ function buyFractalEngine(x) {
   }
 }
 function fractalShift() {
-  let cost = EN.arrow(10,(game.fractalShift+2),1000)
+  let cost = EN.arrow(10,(game.fractalShift),1000)
   if (game.incrementy.gte(cost)) {
     game.incrementy=EN(0)
     game.bigBrainOrd=EN(0)
