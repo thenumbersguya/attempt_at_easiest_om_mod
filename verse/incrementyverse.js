@@ -510,7 +510,7 @@ function updateFractalEngine(ms) {
       mach.own = mach.own.add(game.incrementy)
     }
     let tempown = mach.own
-    if (tempown.gte(140)) tempown = tempown.div(140).pow(0.1).times(140)
+    if (tempown.gte(140)) tempown = tempown.div(1).pow(1).times(140)
     mach.charge=mach.charge.add(tempown.times(ms/1000).times(getMachMult(mach.level)))
     let autoReq = EN(10).pow(mach.level)
     if (mach.charge.gte(autoReq)) {
@@ -539,18 +539,18 @@ function updateFractalEngine(ms) {
     get("fractalEngineMachines").children[i].children[0].children[0].children[0].children[0].innerHTML=`
     Buy Fractal Engine Level ${beautifyEN(mach.level)}<br>Owned: ${beautifyEN(mach.own)}<br>Cost: ${beautifyEN(FGH(mach.level.add(1),EN(getFractalBase())).times(EN(game.fractalShift).tetr(3)))} Incrementy`
     let tempown = mach.own
-    if (tempown.gte(140)) tempown = tempown.div(140).pow(0.1).times(140)
+    if (tempown.gte(140)) tempown = tempown.div(1).pow(1).times(140)
     get("fractalEngineMachines").children[i].children[0].children[0].children[0].children[1].innerHTML=`
     Automation Charge: ${beautifyEN(mach.charge)}/${beautifyEN(EN(10).pow(mach.level))}<br>+${beautifyEN(tempown.times(getMachMult(mach.level)))}/s`
   }
   get("fractalDimensionalBase").innerHTML=`Fractal Dimensional Base: ${getFractalBase()}<br>Incrementy: ${beautifyEN(game.incrementy)}
-${(game.fractalEngine.some(mach => {return mach.own.gte(140)})?`<br><b style="color:red;">Your Fractal Engine gets slower after 140 copies (x --> 140(x/140)^(0.1))</b>`:"")}`
+${(game.fractalEngine.some(mach => {return mach.own.gte(140)})?`<br><b style="color:green;">Your Fractal Engine ACTUALLY GETS FASTER after 140 copies (x --> 140 is when production is multiplied by 140</b>`:"")}`
   get("fractalShift").children[0].innerHTML=`Perform a Fractal Shift and gain the following:
   <br>+1 Automation Engine
   <br>-1 Fractal Engine Base
   <br>${(getOrbs(game.fractalShift+1)-getOrbs(game.fractalShift)==0?`Next Orb in ${Math.floor((getOrbs()/2+1)**2)-game.fractalShift} FS`:`+1 Energy Orb`)}
   <br>Fractal Engine Costs go up
-  <br><br>Requirement: 10{${(game.fractalShift+2)}}1000 Incrementy`
+  <br><br>Requirement: 10{${(game.fractalShift)}}1000 Incrementy`
   get("cumFSReward").innerHTML=
     `Cumulative Rewards:<br>
     ${game.fractalShift+1} Fractal Engine Levels<br>
@@ -616,7 +616,7 @@ function buyFractalEngine(x) {
   }
 }
 function fractalShift() {
-  let cost = EN.arrow(10,(game.fractalShift),1000)
+  let cost = EN.arrow(10,(game.fractalShift),10)
   if (game.incrementy.gte(cost)) {
     game.incrementy=EN(0)
     game.bigBrainOrd=EN(0)
@@ -667,7 +667,7 @@ function updateOrb() {
 }
 
 function calcOrbSpeedMult() {
-  return (1+0.2*game.fractalUpgrades[1])*(game.sfBought.includes(132)?1.75:1)/game.orbEnabled.reduce(function(total, num, ind) {
+  return (1+200000000*game.fractalUpgrades[1])*(game.sfBought.includes(132)?1.75:1)/game.orbEnabled.reduce(function(total, num, ind) {
     return total * [1,1,1][ind]**num;
   }, 1);
 }
