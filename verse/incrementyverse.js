@@ -668,7 +668,7 @@ function updateOrb() {
 
 function calcOrbSpeedMult() {
   return (1+0.2*game.fractalUpgrades[1])*(game.sfBought.includes(132)?1.75:1)/game.orbEnabled.reduce(function(total, num, ind) {
-    return total * [200,1000,1000][ind]**num;
+    return total * [1,1,1][ind]**num;
   }, 1);
 }
 
