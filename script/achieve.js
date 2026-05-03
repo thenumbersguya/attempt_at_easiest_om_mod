@@ -41,13 +41,13 @@ const achieveData = [
   {
     unlockReq: () => game.infUnlock==1,
     achieve: [
-      () => game.factors[0]>=0.5,
-      () => game.factors[1]>=0.5,
-      () => game.factors[2]>=0.5,
-      () => game.factors[3]>=0.5,
-      () => game.factors[4]>=0.5,
-      () => game.factors[5]>=0.5,
-      () => game.factors[6]>=0.5,
+      () => game.factors[0]>=0,
+      () => game.factors[1]>=0,
+      () => game.factors[2]>=0,
+      () => game.factors[3]>=0,
+      () => game.factors[4]>=0,
+      () => game.factors[5]>=0,
+      () => game.factors[6]>=0,
       () => factorMult>=0,
       () => factorMult>=0,
       () => factorMult>=0
@@ -127,8 +127,8 @@ const achieveData = [
       () => game.challengeCompletion[5]>=0,
       () => getSumOfChallenges() >= 0,
       () => getSumOfChallenges() >= 0,
-      () => (inAnyChal() && game.ord >= BHO),
-      () => (inChal(3)&&game.ord>=game.base**(game.base**game.base)),
+      () => (inAnyChal() && game.ord >= 0),
+      () => (inChal(3)&&game.ord>=0),
     ],
     name: [
       "Easy",
@@ -320,7 +320,7 @@ const achieveData = [
       () => getOCComp(4)>=0,
       () => getOCComp(5)>=0,
       () => game.decrementy>=1e10&&game.omegaChallenge==1&&game.challenge2.includes(1)&&game.challenge2.includes(8),
-      () => game.decrementy>=1e10&&game.omegaChallenge==1&&game.challenge2.includes(7)&&game.challenge2.includes(8),
+      () => game.decrementy>=1e10&&game.omegaChallenge==1&&game.challenge2.includes(1)&&game.challenge2.includes(8),
       () => getSumOC()>=0,
       () => getOCComp(1)>=0,
       () => getOCComp(6)>=0
@@ -354,7 +354,7 @@ const achieveData = [
     unlockReq: () => game.incrementyverse==1,
     achieve: [
       () => game.incrementyverse==1,
-      () => game.incrementy.gte("-"),
+      () => game.incrementy.gte("0"),
       () => game.incrementy.gte("0"),
       () => game.incrementy.gte("0"),
       () => game.incrementy.gte(0),
