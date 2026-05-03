@@ -53,7 +53,7 @@ const challengeGoals = [
   [0, 0, 0,Infinity],
   [0, 0, 0,Infinity],
   [0, 0, 0,Infinity],
-  [3.0e10, 6.0e10, 2.4e11, Infinity],
+  [0, 0, 0, Infinity],
   [Infinity,Infinity,Infinity]
 ];
 const challengeCurve = [0, 0.5, 0.75, 1];
@@ -636,7 +636,7 @@ function render() {
       : beautify(game.limAuto * totalMult * limAutoMult))} times per second`;
   get("buysucc").innerHTML =
     `Buy Successor Autobuyer for ${(inChal(1)? game.succAuto === 1
-        ? "Infinity"
+        ? "0"
         : "1.000e6"
       : beautify2(
           Math.min(1e260 + game.succAuto, 100 * (2 ** game.succAuto))
@@ -645,7 +645,7 @@ function render() {
     "Buy Maximize Autobuyer for " +
     (inChal(1)
       ? game.limAuto === 1
-        ? "Infinity"
+        ? "0"
         : "1.000e6"
       : beautify2(Math.min(10 ** 260 + game.limAuto, 100 * 2 ** game.limAuto))) +
     "  OP";
@@ -790,8 +790,8 @@ function render() {
   get("dynamicDecreaseText").style.display =
     inChal(6)||inChal(7) ? "inline" : "none";
   get("dynamicDecrease").textContent = game.upgrades.includes(14)
-    ? "10.000"
-    : "1.000e300"; //hi
+    ? "0"
+    : "0"; //hi
   let bfactor;
   bfactorMult = 1;
   for (let i = 0; i < 7; i++) {
@@ -1425,16 +1425,16 @@ function bup(x, spectate = 0) {
       (game.leastBoost <= 1.5 || (!inChal(6))) && game.omegaChallenge !== 3
     ) {
       if (
-        !(x == 12 && !(getSumOfChallenges() >= 7)) &&
-        !(x == 16 && !(getSumOfChallenges() >= 22)) &&
-        !(x == 20 && !(getSumOfChallenges() >= 33)) &&
-        !(x == 24 && !(getSumOfChallenges() >= 37)) &&
+        !(x == 12 && !(getSumOfChallenges() >= 0)) &&
+        !(x == 16 && !(getSumOfChallenges() >= 0)) &&
+        !(x == 20 && !(getSumOfChallenges() >= 0)) &&
+        !(x == 24 && !(getSumOfChallenges() >= 0)) &&
         (x < 4.5 || game.upgrades.includes(x - 4))
       ) {
         if (spectate == 0) {
           if (x == 16&&collapseAnimation==0) {
             let a = confirm(
-              "Buying this upgrade will destroy everything booster destroys, along with all of your upgrades, autobuyers, challenges, incrementy, incrementy upgrades, and manifolds for a single currency of the next prestige layer. Are you ready for this?"
+              "Buying this upgrade will destroy (a lot of stuff.) Are you ready for this?"
             );
             if (a) {
               let b = confirm(
@@ -2130,7 +2130,7 @@ function maxInfStuff() {
 }
 
 function distributeCard() {
-  let bulk = game.cardinals.divide(3).floor();
+  let bulk = game.cardinals.divide(1).floor();
   game.cardinals = game.cardinals.minus(bulk.times(3));
   game.assCard[0].points = game.assCard[0].points.add(bulk);
   game.assCard[1].points = game.assCard[1].points.add(bulk);
