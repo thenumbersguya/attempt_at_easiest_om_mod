@@ -1,12 +1,12 @@
 "use strict";
 
 const ocGoals = [
-  1e16,
-  1e55,
-  1e75,
-  1e93,
-  1e50,
-  1e85
+  1e10,
+  1e10,
+  1e10,
+  1e10,
+  1e10,
+  1e10
 ]
 
 
@@ -87,7 +87,7 @@ function enterOC(c) {
   if(c==1) {
     const chal1 = prompt("What is the first challenge you would like to be in?")
     const chal2 = prompt("What is the second challenge you would like to be in?")
-    if([1,2,3,4,5,6,7,8].includes(parseInt(chal1)) && [1,2,3,4,5,6,7,8].includes(parseInt(chal2)) && parseInt(chal1) != parseInt(chal2)) {
+    if([1,2,3,4,5,6,7,8,9].includes(parseInt(chal1)) && [1,2,3,4,5,6,7,8,9].includes(parseInt(chal2)) && parseInt(chal1) != parseInt(chal2)) {
       game.challenge2 = [parseInt(chal1), parseInt(chal2)] /// hi patcail we alrady did this pretty much (OC1 that is, OC2+ will be much easier to make)
     } else return
   }
