@@ -3,12 +3,12 @@ const achieveData = [
     unlockReq: () => true,
     achieve: [
       () => game.ord >= 0,
-      () => game.ord >= 10 || (game.ord == 9 && game.over >= 1),
-      () => game.ord >= game.base,
-      () => game.ord >= game.base,
       () => game.ord >= 0,
-      () => game.ord >= (3**12 * 4) * 1e270,
-      () => game.ord >= (3**25 * 4) * 1e270,
+      () => game.ord >= 0,
+      () => game.ord >= 0,
+      () => game.ord >= 0,
+      () => game.ord >= 0,
+      () => game.ord >= 0,
       () => game.ord >= 0,
       () => game.ord >= 0,
       () => game.ord >= 0
