@@ -637,7 +637,7 @@ function render() {
   get("buysucc").innerHTML =
     `Buy Successor Autobuyer for ${(inChal(1)? game.succAuto === 1
         ? "0"
-        : "1.000e6"
+        : "0"
       : beautify2(
           Math.min(1e260 + game.succAuto, 100 * (2 ** game.succAuto))
         ))} OP`;
@@ -646,7 +646,7 @@ function render() {
     (inChal(1)
       ? game.limAuto === 1
         ? "0"
-        : "1.000e6"
+        : "0"
       : beautify2(Math.min(10 ** 260 + game.limAuto, 100 * 2 ** game.limAuto))) +
     "  OP";
   get("factorShift").innerHTML =
@@ -2130,7 +2130,7 @@ function maxInfStuff() {
 }
 
 function distributeCard() {
-  let bulk = game.cardinals.divide(1).floor();
+  let bulk = game.cardinals.divide(1000).floor();
   game.cardinals = game.cardinals.minus(bulk.times(3));
   game.assCard[0].points = game.assCard[0].points.add(bulk);
   game.assCard[1].points = game.assCard[1].points.add(bulk);
