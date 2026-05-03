@@ -2130,7 +2130,7 @@ function maxInfStuff() {
 }
 
 function distributeCard() {
-  let bulk = game.cardinals.divide(1000).floor();
+  let bulk = game.cardinals.divide(3).floor();
   game.cardinals = game.cardinals.minus(bulk.times(3));
   game.assCard[0].points = game.assCard[0].points.add(bulk);
   game.assCard[1].points = game.assCard[1].points.add(bulk);
