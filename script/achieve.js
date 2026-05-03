@@ -2,16 +2,16 @@ const achieveData = [
   {
     unlockReq: () => true,
     achieve: [
-      () => game.ord >= 1,
+      () => game.ord >= 0,
       () => game.ord >= 10 || (game.ord == 9 && game.over >= 1),
-      () => game.ord >= game.base**2,
-      () => game.ord >= game.base**game.base,
-      () => game.ord >= 4e270,
+      () => game.ord >= game.base,
+      () => game.ord >= game.base,
+      () => game.ord >= 0,
       () => game.ord >= (3**12 * 4) * 1e270,
       () => game.ord >= (3**25 * 4) * 1e270,
-      () => game.ord >= BHO,
-      () => game.ord > BHO*2,
-      () => game.ord >= BHO*342
+      () => game.ord >= 0,
+      () => game.ord >= 0,
+      () => game.ord >= 0
     ],
     name: [
       "You gotta start somewhere",
@@ -48,9 +48,9 @@ const achieveData = [
       () => game.factors[4]>=0.5,
       () => game.factors[5]>=0.5,
       () => game.factors[6]>=0.5,
-      () => factorMult>=2e6,
-      () => factorMult>=2e8,
-      () => factorMult>=4e12
+      () => factorMult>=0,
+      () => factorMult>=0,
+      () => factorMult>=0
     ],
     name: [
       "I've been Multiplied!",
@@ -80,16 +80,16 @@ const achieveData = [
   {
     unlockReq: () => game.boostUnlock==1,
     achieve: [
-      () => game.factorBoosts>=1,
-      () => game.factorBoosts>=5,
-      () => game.factorBoosts>=15,
-      () => game.factorBoosts>=25,
-      () => game.factorBoosts>=100,
-      () => game.factorBoosts>=1e4,
-      () => game.factorBoosts>=1e8,
-      () => game.factorBoosts>=1e12,
-      () => game.factorBoosts>=1e16,
-      () => game.factorBoosts>=1e21,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
+      () => game.factorBoosts>=0,
     ],
     name: [
       "Boost!",
@@ -119,14 +119,14 @@ const achieveData = [
   {
     unlockReq: () => game.upgrades.includes(4),
     achieve: [
-      () => game.challengeCompletion[0]>=1,
-      () => game.challengeCompletion[1]>=1,
-      () => game.challengeCompletion[2]>=2,
-      () => game.challengeCompletion[3]>=2,
-      () => game.challengeCompletion[4]>=3,
-      () => game.challengeCompletion[5]>=3,
-      () => getSumOfChallenges() >= 24,
-      () => getSumOfChallenges() >= 48,
+      () => game.challengeCompletion[0]>=0,
+      () => game.challengeCompletion[1]>=0,
+      () => game.challengeCompletion[2]>=0,
+      () => game.challengeCompletion[3]>=0,
+      () => game.challengeCompletion[4]>=0,
+      () => game.challengeCompletion[5]>=0,
+      () => getSumOfChallenges() >= 0,
+      () => getSumOfChallenges() >= 0,
       () => (inAnyChal() && game.ord >= BHO),
       () => (inChal(3)&&game.ord>=game.base**(game.base**game.base)),
     ],
@@ -158,16 +158,16 @@ const achieveData = [
   {
     unlockReq: () => game.upgrades.includes(12),
     achieve: [
-      () => game.manifolds>=1,
-      () => game.manifolds>=2,
-      () => game.manifolds>=4,
-      () => game.manifolds>=7,
-      () => game.manifolds>=13,
-      () => game.manifolds>=26,
-      () => game.manifolds>=52,
-      () => game.manifolds>=69,
-      () => game.manifolds>=156,
-      () => game.manifolds>=398,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
+      () => game.manifolds>=0,
     ],
     name: [
       "The first of mani",
@@ -198,15 +198,15 @@ const achieveData = [
     unlockReq: () => game.collapseUnlock==1,
     achieve: [
       () => game.aups.includes(1),
-      () => game.aups.includes(2),
-      () => game.aups.includes(3),
-      () => game.aups.includes(4),
-      () => game.aups.includes(5),
-      () => game.aups.includes(6),
-      () => game.aups.includes(7),
-      () => game.aups.includes(8),
-      () => game.aups.includes(9),
-      () => game.aups.includes(10)
+      () => game.aups.includes(1),
+      () => game.aups.includes(1),
+      () => game.aups.includes(1),
+      () => game.aups.includes(1),
+      () => game.aups.includes(1),
+      () => game.aups.includes(1),
+      () => game.aups.includes(1),
+      () => game.aups.includes(1),
+      () => game.aups.includes(1)
     ],
     name: [
       "The Singular Cardinal",
@@ -237,15 +237,15 @@ const achieveData = [
     unlockReq: () => game.collapseUnlock==1,
     achieve: [
       () => calcSlugMile() >= 1,
-      () => calcSlugMile() >= 2,
-      () => calcSlugMile() >= 3,
-      () => calcSlugMile() >= 4,
-      () => calcSlugMile() >= 5,
-      () => calcSlugMile() >= 6,
+      () => calcSlugMile() >= 1,
+      () => calcSlugMile() >= 1,
+      () => calcSlugMile() >= 1,
+      () => calcSlugMile() >= 1,
+      () => calcSlugMile() >= 1,
       () => getBaseless() >= 1,
-      () => getBaseless() >= 2,
-      () => getBaseless() >= 3,
-      () => getBaseless() >= 4
+      () => getBaseless() >= 1,
+      () => getBaseless() >= 1,
+      () => getBaseless() >= 1
     ],
     name: [
       "As easy as falling over",
@@ -275,16 +275,16 @@ const achieveData = [
   {
     unlockReq: () => game.leastBoost <= 1.5,
     achieve: [
-      () => getSingLevel().toNumber()>=2,
-      () => getSingLevel().toNumber()>=16,
-      () => getSingLevel().toNumber()>=20,
-      () => getSingLevel().toNumber()>=42,
-      () => getSingLevel().toNumber()>=69,
-      () => getSingLevel().toNumber()>=100,
-      () => getSingLevel().toNumber()>=200,
-      () => getSingLevel().toNumber()>=404,
-      () => getSingLevel().toNumber()>=420,
-      () => getSingLevel().toNumber()>=616,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
+      () => getSingLevel().toNumber()>=0,
     ],
     name: [
       "A Soulless Singularity",
@@ -314,16 +314,16 @@ const achieveData = [
   {
     unlockReq: () => game.upgrades.includes(24),
     achieve: [
-      () => getOCComp(1)>=1,
-      () => getOCComp(2)>=2,
-      () => getOCComp(3)>=3,
-      () => getOCComp(4)>=Math.PI,
-      () => getOCComp(5)>=5,
-      () => game.decrementy>=1e100&&game.omegaChallenge==1&&game.challenge2.includes(1)&&game.challenge2.includes(8),
-      () => game.decrementy>=1e100&&game.omegaChallenge==1&&game.challenge2.includes(7)&&game.challenge2.includes(8),
-      () => getSumOC()>=24,
-      () => getOCComp(1)>=12,
-      () => getOCComp(6)>=1.1
+      () => getOCComp(1)>=0,
+      () => getOCComp(2)>=0,
+      () => getOCComp(3)>=0,
+      () => getOCComp(4)>=0,
+      () => getOCComp(5)>=0,
+      () => game.decrementy>=1e10&&game.omegaChallenge==1&&game.challenge2.includes(1)&&game.challenge2.includes(8),
+      () => game.decrementy>=1e10&&game.omegaChallenge==1&&game.challenge2.includes(7)&&game.challenge2.includes(8),
+      () => getSumOC()>=0,
+      () => getOCComp(1)>=0,
+      () => getOCComp(6)>=0
     ],
     name: [
       "Infinitely Challenging",
@@ -354,10 +354,10 @@ const achieveData = [
     unlockReq: () => game.incrementyverse==1,
     achieve: [
       () => game.incrementyverse==1,
-      () => game.incrementy.gte("ee5"),
-      () => game.incrementy.gte("ee10"),
-      () => game.incrementy.gte("eee10"),
-      () => game.incrementy.gte(tenTetrTen),
+      () => game.incrementy.gte("-"),
+      () => game.incrementy.gte("0"),
+      () => game.incrementy.gte("0"),
+      () => game.incrementy.gte(0),
       () => false,
       () => false,
       () => false,
@@ -441,8 +441,8 @@ function checkAchieve() {
     "Get all of the sluggish milestones to unlock the next row of achivements",
     "Unlock Omega Challenges to unlock the next row of achivements",
     "Enter the Portal and have 90 achievements to unlock the next row of achievements",
-    "Next row of achievements is coming soon!",
-    "You unlocked the last set of achievements. Now get them all to beat the game!"
+    "Next row of achievements is coming soon! (not)",
+    "You unlocked the last set of achievements. Now get them all to beat the game!(how did you see this)"
   ][game.achieveRow.length]
 }
 
